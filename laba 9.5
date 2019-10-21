@@ -1,0 +1,48 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+
+	setlocale(0, "");
+
+	int N;
+
+	do {
+
+		cout << "Введите год : ";
+		cin >> N;
+		cout << endl;
+
+		string Color[10]{
+			"бел","бел","черн","черн","зелён","зелён","красн","красн","жёлт","жёлт"
+		};
+
+		string Ending[12]{
+			"ой ","ой ","ой ","ой ","ой ", "ой ","ого ","ого ","ого ","ой ","ой ", "ой "
+		};
+
+		string Animals[12]{
+			"крысы.\n","коровы.\n","тигра.\n","зайца.\n","дракона.\n","змеи.\n","лошади.\n","овцы.\n","обезьяны.\n","курицы.\n","собаки.\n","свиньи.\n"
+		};
+
+		if (N > 0) {
+
+			cout << N << " - год " << Color[N % 10] << Ending[N % 12] << Animals[(N + 8) % 12];
+			break;
+
+		}
+		else
+		{
+			cout << "Повторите попытку!" << endl;
+		}
+
+	} while (true);
+
+	cout << endl;
+
+	system("pause");
+
+	return 0;
+
+}
