@@ -1,35 +1,40 @@
 #include <iostream>
 using namespace std;
-
-int main () {
-setlocale(LC_ALL, "Russian");
-  char C;
-  int N;
-  cout << "Введите символ направления («N» — север, «W» — запад, «S» — юг, «E» — восток): ";
-  cin >> C;
-  cout << "Введите цифровую команду для робота (0 — продолжать движение, 1 — поворот налево, -1 — поворот направо): ";
-  cin >> N;
-  cout << "Направление - "; 
-  switch (N) {
-    case 1: switch (C) {
-   		case 'N': cout << "W"; break;
-   		case 'S': cout << "E"; break;  
-   		case 'W': cout << "S"; break;
-   		case 'E': cout << "N"; break;
-    } break ;
-	case -1: switch (C) {
-   		case 'N': cout << "E"; break;
-   		case 'S': cout << "W"; break;  
-   		case 'W': cout << "N"; break;
-   	    case 'E': cout << "S"; break;
-	} break;
-	case 0: switch (C) {
-   		case 'N': cout << "N"; break;
-   		case 'S': cout << "S"; break;  
-   		case 'W': cout << "W"; break;
-   	    case 'E': cout << "E"; break;
-	} break;
-   }
-      cout << endl;
-   return 0;
+int main()
+{
+    setlocale(LC_ALL, "Russian" );
+    int k;
+    char n;
+    cout<<"Vvedite napravlenie"<<endl;
+    cin>>n;
+    cout<<"Vvedite komandu"<<endl;
+    cin>>k;
+    switch(k)
+    {
+        case -1: switch(n)
+        {
+            case 'N': cout<<"B"<<endl; break;
+            case 'E': cout<<"Ю"<<endl; break;
+            case 'S': cout<<"З"<<endl; break;
+            case 'W': cout<<"С"<<endl; break;
+        }
+        break;
+        case 1: switch(n)
+        {
+            case 'N': cout<<"З"<<endl; break;
+            case 'W': cout<<"Ю"<<endl; break;
+            case 'S': cout<<"В"<<endl; break;
+            case 'E': cout<<"С"<<endl; break;
+        }
+        break;
+        case 0: switch(n)
+        {
+            case 'N': cout<<"С"<<endl; break;
+            case 'W': cout<<"З"<<endl; break;
+            case 'S': cout<<"Ю"<<endl; break;
+            case 'E': cout<<"В"<<endl; break;
+        }
+        break;
+    }
+    return 0;
 }
