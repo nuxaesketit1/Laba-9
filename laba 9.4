@@ -1,59 +1,29 @@
 #include <iostream>
 using namespace std;
-
-int main () {
-setlocale(LC_ALL, "Russian");
-	int N;
-	cout << "N="; cin >> N;
-	if (N/10==1) {
-		switch (N) {
-			case 10: cout << "десять"; break;
-			case 11: cout << "одиннадцать"; break;
-			case 12: cout << "двенадцать"; break;
-			case 13: cout << "тринадцать"; break;
-			case 14: cout << "четырнадцать"; break;
-			case 15: cout << "пятнадцать"; break;
-			case 16: cout << "шестнадцать"; break;
-			case 17: cout << "семнадцать"; break;
-			case 18: cout << "восемнадцать"; break;
-			case 19: cout << "девятнадцать"; break;
-		}
-	}
-	else { 
-	switch (N/10) {
-		case 2: cout << "двадцать"; break;
-		case 3: cout << "тридцать"; break;
-		case 4: cout << "сорок"; break;
-	}
-	}
-	if (N%10 != 0) {
-		switch (N%10) {
-			case 1: cout << " одно"; break;
-			case 2: cout << " два"; break;
-			case 3: cout << " три"; break;
-			case 4: cout << " четыре"; break;
-			case 5: cout << " пять"; break;
-			case 6: cout << " шесть"; break;
-			case 7: cout << " семь"; break;
-			case 8: cout << " восемь"; break;
-			case 9: cout << " девять"; break;
-		}
-	}
-	switch (N%10) {
-		case 0:
-		case 5:
-		case 6:
-		case 7:
-		case 8:
-		case 9:
-		 cout << " учебных заданий";
-		 break;
-		case 1: cout << " учебное задание";
-		break;
-		case 2:
-		case 3:
-		case 4: cout << " учебных задания";
-		break;
-	}
-	return 0;
+int main()
+{
+    setlocale (LC_ALL, "Russian");
+    int a,x1,x2,x3,x4;
+    cin>>a;
+    x1=a/100;
+    x2=(a/10)%10;
+    x3=a%10;
+    string z1[9] {"сто","двести","триста","четыреста","пятьсот",
+    "шестьсот","семьсот","восемьсот","девятьсот"};
+    string z2_1[10] {"десять","одиннадцать","двенадцать","тринадцать",
+    "четырнадцать","пятнадцать","шестнадцать","семнадцать","восемнадцать",
+    "девятнадцать"};
+    string z2_ost[10] {"","","двадцать","тридцать","сорок",
+    "пятьдесят","шестьдесят","семьдесят","восемьдесят","девяносто"};
+    string z3[10] {"","один","два","три","четыре","пять","шесть",
+    "семь","восемь","девять"};
+    cout<<z1[x1-1]<<" ";
+    if (x2==1) 
+    {
+        x4=a%100;
+        cout<<z2_1[x4%10];
+        return 0;
+    }
+    cout<<z2_ost[x2]<<" "<<z3[x3]<<endl;
+    return 0;
 }
